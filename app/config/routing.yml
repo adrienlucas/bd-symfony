@@ -1,0 +1,29 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+todo.list:
+    path: /list
+    defaults: {_controller: "\\AppBundle\\Controller\\TodoController::listAction"}
+    requirements:
+        _method: "GET"
+#    methods: [GET]
+
+todo.detail:
+    path: /todo/{id}
+    defaults: {_controller: "\\AppBundle\\Controller\\TodoController::detailAction"}
+
+todo.create:
+    path: /list/create
+    defaults: {_controller: "\\AppBundle\\Controller\\TodoController::createAction"}
+    requirements:
+        _method: POST
+#    methods: [POST]
+
+todo.close:
+    path: /todo/{id}/close
+    defaults: {_controller: "\\AppBundle\\Controller\\TodoController::closeAction"}
+
+todo.delete:
+    path: /todo/{id}/delete
+    defaults: {_controller: "\\AppBundle\\Controller\\TodoController::deleteAction"}
